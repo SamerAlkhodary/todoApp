@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
 
     },
     title: {
-        fontSize:25,
+        fontSize:20,
         fontWeight:"500",
         marginLeft:20,
 
@@ -33,10 +33,20 @@ const styles = StyleSheet.create({
     },
     icons:{
         justifyContent:'center',
-        fontSize:25,
+        fontSize:30,
+        justifyContent:'center',
+        color:'white'
+
+        
+    },
+    cirlceButton:{
+        height:30,
+        width:30,
+        borderRadius:30,
+        backgroundColor:'#e6e6fa',
         alignSelf:'flex-end'
+
     }
-    
 
 });
 export default styles;
