@@ -4,7 +4,7 @@ import {StyleSheet,Dimensions} from 'react-native';
 const styles = StyleSheet.create({
     ItemContainer: {
         width: '90%',
-        margin:20,
+        margin:10,
         borderRadius:20,
         height: Dimensions.get('window').height/8,
         backgroundColor:'white',
@@ -28,7 +28,10 @@ const styles = StyleSheet.create({
         
     },
     header:{
+
         marginTop:10,
+        flexDirection:'row',
+        justifyContent:'space-between'
 
     },
     icons:{

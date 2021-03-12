@@ -18,6 +18,9 @@ const ListItem = (probs) =>{
         <View style={styles.ItemContainer}>
             <Pressable onPress={showDialog}> 
             <View style= {styles.header}>
+            <Text style={styles.title}>
+                {item.title}
+            </Text>
             <View style={styles.cirlceButton}>
                 <Pressable onPress={
                     ()=>{
@@ -29,9 +32,7 @@ const ListItem = (probs) =>{
                 </Pressable>
             </View>
             
-            <Text style={styles.title}>
-                {item.title}
-            </Text>
+            
             </View>
            
             <Text style={styles.description}>
@@ -41,7 +42,6 @@ const ListItem = (probs) =>{
 
         <Portal>
        
-      
         <Dialog visible={visible} onDismiss={hideDialog}>
           <Dialog.Title>{item.title}</Dialog.Title>
           <Dialog.Content>
