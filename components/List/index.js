@@ -8,6 +8,8 @@ import  styles from './styles.js';
 const List = (probs) =>{
 
   const data = probs.items;
+  const nav = probs.navigation;
+
 
   return (
     <View style={styles.list}>
@@ -15,7 +17,7 @@ const List = (probs) =>{
         data={data}
         renderItem={({item})=> <ListItem item={item}/>}
         keyExtractor={(item,i)=> i}
-        ListHeaderComponent={()=><ListHeader></ListHeader>}
+        ListHeaderComponent={()=><ListHeader navigation={nav}></ListHeader>}
         stickyHeaderIndices={[0]}
       >
       </FlatList>
