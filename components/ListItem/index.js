@@ -4,10 +4,13 @@ import { View,Text, Pressable } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
 import { Paragraph, Dialog, Portal } from 'react-native-paper';
 import RoundedButton from '../RoundedButton';
+import {useDispatch} from 'react-redux';
+import {removeItem} from '../../redux/ItemStore'
 
-const ListItem = (probs) =>{
- 
-    const item = probs.item;
+const ListItem = (props) =>{
+    const dispatch= useDispatch();
+    const item = props.item;
+
     const [visible, setVisible] = React.useState(false);
     const showDialog = () => setVisible(true);
     const hideDialog = () => setVisible(false);
@@ -24,7 +27,7 @@ const ListItem = (probs) =>{
             <View style={styles.cirlceButton}>
                 <Pressable onPress={
                     ()=>{
-                        console.log("delete me ");
+                        dispatch(removeItem(item.id));
                     }
 
                 }>

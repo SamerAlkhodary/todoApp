@@ -3,15 +3,22 @@ import React from 'react';
 import { View,Text,TextInput, Pressable } from 'react-native';
 import { Appbar } from 'react-native-paper';
 import { AntDesign } from '@expo/vector-icons';
-
+import {useDispatch,useSelector} from 'react-redux';
+import {addItem} from '../../redux/ItemStore'
 import  styles from './styles.js';
 import RoundedButton from '../RoundedButton/index.js';
 
 
 const AddItemPage = (probs) =>{
-    const [title, onChangeTitle] = React.useState('Unkown');
-    const [description, onChangeDesc] = React.useState('');
-    console.log(styles.iconBack);
+
+
+
+
+  const dispatch= useDispatch();
+  const [title, onChangeTitle] = React.useState('Unkown');
+  const [description, onChangeDesc] = React.useState('');
+  const {toDoItems,doneItems,count} = useSelector(state => state.items);
+
 
   return (
    
@@ -39,7 +46,10 @@ const AddItemPage = (probs) =>{
         multiline={true}
         onChangeText={text => onChangeDesc(text)}
       />
-      <RoundedButton text="Save" onPress={()=>{}}>
+      <RoundedButton text="Save" onPress={()=>{
+        dispatch(addItem({title:title,description:description,id: count }));
+        probs.nav.navigate('HomePage');
+      }}>
 
       </RoundedButton>
      </View>  
@@ -51,3 +61,4 @@ const AddItemPage = (probs) =>{
   );
   };
   export default AddItemPage;
+
