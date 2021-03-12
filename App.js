@@ -2,7 +2,8 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import {  StyleSheet, View } from 'react-native';
 import List from './components/List';
-import Item from './model/Item.js'
+import Item from './model/Item.js';
+import { Provider as PaperProvider } from 'react-native-paper';
 
 export default function App() {
 
@@ -10,14 +11,16 @@ export default function App() {
   ,new Item('School','get there asap today')];
 
   return (
-    <View style={styles.container}>
+    <PaperProvider>
+       <View style={styles.container}>
       <List items={data}></List>
         
-        
-     
       <StatusBar style="auto"/>
 
     </View>
+
+    </PaperProvider>
+   
   );
 }
 

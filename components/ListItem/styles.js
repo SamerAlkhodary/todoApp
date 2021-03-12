@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
         backgroundColor:'#e6e6fa',
         alignSelf:'flex-end'
 
-    }
-
+    },
+ 
 });
 export default styles;
