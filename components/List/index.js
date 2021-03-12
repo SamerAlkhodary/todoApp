@@ -1,7 +1,8 @@
 
 import React from 'react';
-import { FlatList, View } from 'react-native';
+import { FlatList, View,Text } from 'react-native';
 import ListItem from '../ListItem'
+import ListHeader from './ListHeader';
 import  styles from './styles.js';
 
 const List = (probs) =>{
@@ -14,6 +15,7 @@ const List = (probs) =>{
         data={data}
         renderItem={({item})=> <ListItem item={item}/>}
         keyExtractor={(item,i)=> i}
+        ListHeaderComponent={()=><ListHeader></ListHeader>}
       >
       </FlatList>
 

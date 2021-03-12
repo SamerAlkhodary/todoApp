@@ -2,7 +2,7 @@ import  styles from './styles.js'
 import React, { Component } from 'react';
 import { View,Text, Pressable } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
-import { Button, Paragraph, Dialog, Portal } from 'react-native-paper';
+import { Paragraph, Dialog, Portal } from 'react-native-paper';
 import RoundedButton from '../RoundedButton';
 
 const ListItem = (probs) =>{
