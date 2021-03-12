@@ -4,8 +4,9 @@ import {  StyleSheet, View } from 'react-native';
 
 import { Provider as PaperProvider } from 'react-native-paper';
 import AddItemPage from '../components/AddItemPage';
-export default function AddPage(probs) {
 
+export default function AddPage(probs) {
+    
   return (
    
    <PaperProvider>

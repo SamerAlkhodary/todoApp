@@ -16,7 +16,7 @@ const List = (probs) =>{
       <FlatList
         data={data}
         renderItem={({item})=> <ListItem item={item}/>}
-        keyExtractor={(item,i)=> i}
+        keyExtractor={(item,i)=> i.toString()}
         ListHeaderComponent={()=><ListHeader navigation={nav}></ListHeader>}
         stickyHeaderIndices={[0]}
       >

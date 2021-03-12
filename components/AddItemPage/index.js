@@ -30,13 +30,13 @@ const AddItemPage = (probs) =>{
         <View style={styles.container}>
         <TextInput style={styles.titleBox} 
         placeholder="Title"
-        maxLength="30"
+        maxLength={30}
         onChangeText={text => onChangeTitle(text)}
       />
        <TextInput style={styles.descriptionBox} 
         placeholder="Description ..."
-        maxLength="120"
-        multiline="true"
+        maxLength={120}
+        multiline={true}
         onChangeText={text => onChangeDesc(text)}
       />
       <RoundedButton text="Save" onPress={()=>{}}>

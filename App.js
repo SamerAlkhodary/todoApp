@@ -17,7 +17,7 @@ export default function App() {
   new Item('School','get there asap today')];
 
   return (
-    <Navigator></Navigator>
+    <Navigator navigationOptions={{header:null}}></Navigator>
   
    
   );
