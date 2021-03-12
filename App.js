@@ -1,14 +1,20 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import ListItem from './components/ListItem';
+import {  StyleSheet, View } from 'react-native';
+import List from './components/List';
 import Item from './model/Item.js'
 
 export default function App() {
-  const item = new Item('School','get there asap today');
+
+  const data = [new Item("Work","go to work today")
+  ,new Item('School','get there asap today')];
+
   return (
     <View style={styles.container}>
-      <ListItem item={item}></ListItem>
+      <List items={data}></List>
+        
+        
+     
       <StatusBar style="auto"/>
 
     </View>
@@ -18,6 +24,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    marginTop:30,
     backgroundColor: '#d3dadb',
     alignItems: 'center',
     justifyContent: 'center',
