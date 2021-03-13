@@ -13,13 +13,14 @@ class List extends React.Component{
     const data = this.props.items;
     const nav = this.props.navigation;
     const header= this.props.header;
+    const color= this.props.color;
     return (
       <View style={styles.list}>
         <FlatList
           data={data}
           renderItem={({item})=> <ListItem item={item}/>}
           keyExtractor={(item,i)=> i.toString()}
-          ListHeaderComponent={()=><ListHeader navigation={nav} header={header}></ListHeader>}
+          ListHeaderComponent={()=><ListHeader navigation={nav} header={header} color={color}></ListHeader>}
           stickyHeaderIndices={[0]}
         >
         </FlatList>

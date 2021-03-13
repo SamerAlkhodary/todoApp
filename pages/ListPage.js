@@ -12,7 +12,8 @@ export default function ListPage(props) {
   navigation = props.navigation;
   const{toDoItems}=useSelector(state => state.items);
   const{state}= navigation; 
-  const title=  state.params.title.name
+  const title=  state.params.title.name;
+  const color=  state.params.color;
   let list=[]
   switch(title){
     case "To Do List":
@@ -33,7 +34,7 @@ export default function ListPage(props) {
     
     <PaperProvider>
        <View style={styles.container}>
-      <List items={list} navigation={navigation} header={title}></List>
+      <List items={list} navigation={navigation} header={title}color ={color}></List>
     
     </View>
     </PaperProvider>

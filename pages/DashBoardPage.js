@@ -12,8 +12,8 @@ export default function DashBoardPage(props) {
     const ratio = toDoItems.length==0?0:Math.floor((toDoItems.filter((item)=>(item.isDone)).length/toDoItems.length)*100);
   
     const navigation = props.navigation;
-    const card = ({ name }) =>{
-      navigation.navigate('ListPage',{title:{name}});
+    const card = ({ name,background }) =>{
+      navigation.navigate('ListPage',{title:{name},color:background});
           
         
     };
