@@ -11,7 +11,7 @@ const ListHeader = (props) =>{
   return (
     <View style={styles.header}>
         <Text style={styles.title}>{header}</Text>
-        <Pressable onPress={()=>{nav.navigate('AddItemPage')}}>
+        <Pressable onPress={()=>{nav.navigate('AddItemPage',{title:props.header})}}>
         <MaterialIcons name='add'color='white'style={styles.button}>
 
         </MaterialIcons>

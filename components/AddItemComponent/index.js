@@ -9,16 +9,22 @@ import  styles from './styles.js';
 import RoundedButton from '../RoundedButton/index.js';
 
 
-const AddItemComponent = (probs) =>{
+const AddItemComponent = (props) =>{
 
 
 
 
   const dispatch= useDispatch();
+  
   const [title, onChangeTitle] = React.useState('Unkown');
   const [description, onChangeDesc] = React.useState('');
-  const {toDoItems,doneItems,count} = useSelector(state => state.items);
-  const [value, setValue] = React.useState('work');
+  const {count} = useSelector(state => state.items);
+  const {state}= props.navigation;
+  const parentState= state.params.title;
+  let initValue = parentState=="Private List"?"private":"work";
+  const [value, setValue] = React.useState(initValue);
+  
+
 
 
   return (
@@ -28,7 +34,7 @@ const AddItemComponent = (probs) =>{
            
             <Text style ={styles.title}>Add New Item</Text>
             <View>
-        <Pressable onPress={()=>{probs.nav.navigate('ListPage')}}>
+        <Pressable onPress={()=>{props.navigation.navigate('ListPage')}}>
             <AntDesign name='back' style={styles.iconBack }/>
         </Pressable>
             
@@ -47,6 +53,7 @@ const AddItemComponent = (probs) =>{
         multiline={true}
         onChangeText={text => onChangeDesc(text)}
       />
+      {parentState =="To Do List"&&
     <View>
     <RadioButton.Group onValueChange={value => setValue(value)}value={value}>
       <RadioButton.Item label="Work" value="work"/>
@@ -55,10 +62,11 @@ const AddItemComponent = (probs) =>{
     </RadioButton.Group>
 
     </View >
+}
     <View style={styles.button}>
       <RoundedButton text="Save" onPress={()=>{
         dispatch(addItem({title:title,description:description,id: count,catagory:value,isDone:(false)}));
-        probs.nav.navigate('ListPage');
+        props.navigation.navigate('ListPage');
       }}>
 
       </RoundedButton>

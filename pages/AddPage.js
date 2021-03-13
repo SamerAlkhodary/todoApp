@@ -11,7 +11,7 @@ export default function AddPage(props) {
    
    <PaperProvider>
        <View style={styles.container}>
-      <AddItemComponent nav={props.navigation}/>
+      <AddItemComponent navigation={props.navigation}/>
         
     </View>
 
