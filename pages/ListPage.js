@@ -3,7 +3,8 @@ import React from 'react';
 import {  StyleSheet, View } from 'react-native';
 import List from '../components/List';
 import { Provider as PaperProvider } from 'react-native-paper';
-  import { useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
+  import Setting from '../Strings.js';
 
 export default function ListPage(props) {
 
@@ -16,16 +17,16 @@ export default function ListPage(props) {
   const color=  state.params.color;
   let list=[]
   switch(title){
-    case "To Do Tasks":
+    case Setting.strings.english.toDoTasks:
       list=toDoItems.filter((item)=>!item.isDone);
       break;
-    case "Completed Tasks":
+    case Setting.strings.english.completedTasks:
       list=toDoItems.filter((item)=>item.isDone);
       break;
-      case "Work Tasks":
+      case Setting.strings.english.workTasks:
       list=toDoItems.filter((item)=>item.catagory==="work" && !item.isDone);
       break;
-      case "Home Tasks":
+      case Setting.strings.english.homeTasks:
       list=toDoItems.filter((item)=>item.catagory==="private"&& !item.isDone);
       break;
 

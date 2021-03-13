@@ -12,6 +12,22 @@ const styles = StyleSheet.create({
             
 
     },
+    catagoryContainer:{
+        marginTop:10
+        
+    },
+    priorityContainer:{
+        marginTop:10,
+        
+
+        
+    },
+    catagoryText:{
+        fontSize:18,
+        fontWeight:'500',
+        marginBottom:20
+
+    },
 
     button:{
         width:"100%",

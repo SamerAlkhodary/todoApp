@@ -1,5 +1,4 @@
 import React from 'react';
-import Item from './model/Item.js';
 import Navigator from './navigation/HomeNavigation';
 
 import {Provider} from 'react-redux';

@@ -3,6 +3,7 @@ import React from 'react';
 import {  StyleSheet, View,Text } from 'react-native';
 import { AnimatedCircularProgress } from 'react-native-circular-progress';
 import { useSelector } from 'react-redux';
+import Setting from '../Strings.js';
 
 
 import Dashboard from 'react-native-dashboard';
@@ -17,7 +18,10 @@ export default function DashBoardPage(props) {
           
         
     };
-    const data=[{name:"To Do Tasks",background: '#A7226E'},{name:"Completed Tasks",background: '#EC2049'},{name:"Work Tasks",background: '#F26B38'},{name:"Home Tasks",background: '#2F9599'}]
+    const data=[{name:Setting.strings.english.toDoTasks,background: '#A7226E'},
+    {name:Setting.strings.english.completedTasks,background: '#EC2049'},
+    {name:Setting.strings.english.workTasks,background: '#F26B38'},
+    {name:Setting.strings.english.homeTasks,background: '#2F9599'}]
   return (
   
      

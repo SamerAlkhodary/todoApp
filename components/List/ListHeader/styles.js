@@ -11,8 +11,10 @@ const styles = StyleSheet.create({
             flex:1,
             justifyContent:'space-between',
             flexDirection:'row'
-     
-        
+    },
+    iconContainer:{
+        flexDirection:'row',
+
     },
     button:{
         fontSize:40,
