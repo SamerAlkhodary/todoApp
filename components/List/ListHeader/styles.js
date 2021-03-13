@@ -7,7 +7,7 @@ const styles = StyleSheet.create({
         padding:20,
             width:'100%',
             height: Dimensions.get('window').height/10,
-            backgroundColor:'#3f4a48',
+            backgroundColor:'#2F9599',
             flex:1,
             justifyContent:'space-between',
             flexDirection:'row'

@@ -1,14 +1,29 @@
 import {createStackNavigator} from 'react-navigation-stack';
 import {createAppContainer} from 'react-navigation';
-import HomePage from '../pages/HomePage.js';
+import ListPage from '../pages/ListPage.js';
 import AddPage from '../pages/AddPage.js'
-
+import DashBoardPage from '../pages/DashBoardPage.js'
 const pages = {
-    HomePage:{
-        screen: HomePage
+    DashBoardPage:{
+        screen: DashBoardPage,
+        navigationOptions:{
+            title:""
+            
+        }
+    },
+    ListPage:{
+        screen: ListPage,
+        navigationOptions:{
+            title:""
+            
+        }
     },
     AddItemPage:{
-        screen: AddPage
+        screen: AddPage,
+        navigationOptions:{
+            title:""
+            
+        }
     },
     
   

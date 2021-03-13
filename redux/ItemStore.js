@@ -3,7 +3,6 @@ export const itemSlice= createSlice({
     name:"items",
     initialState:{
         toDoItems:[],
-        doneItems:[],
         count:0
     },
     reducers:{
@@ -13,21 +12,25 @@ export const itemSlice= createSlice({
             state.count+=1;
         },
         removeItem: (state,action) => {
+            let index=-1
+            for (let i =0; i< state.toDoItems.length;i++){
+                if(state.toDoItems[i].id==action.payload.id){
+                    index = i;
+                    break;
+                }
+            }
           
-           console.log(action.payload);
-           newList= [];
-           for(const item of state.toDoItems){
-               if (item.id != action.payload){
-                   console.log(item.id);
-                   newList.push(item);
-               }else{
-                   state.doneItems.push(item);
-               }
+
+           if (action.payload.isComplete){
+               state.toDoItems[index].isDone=true;
+           }else{
+               state.toDoItems.splice(index,1);
            }
-           state.toDoItems=newList;
+           console.log(state.toDoItems);
+
            
-           
-       }
+       
+    }
     }
 });
 export const{addItem,removeItem}=itemSlice.actions;

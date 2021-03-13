@@ -2,8 +2,7 @@ import  styles from './styles.js'
 import React, { Component } from 'react';
 import { View,Text, Pressable } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
-import { Paragraph, Dialog, Portal } from 'react-native-paper';
-import RoundedButton from '../RoundedButton';
+import { Paragraph, Dialog, Portal, Button } from 'react-native-paper';
 import {useDispatch} from 'react-redux';
 import {removeItem} from '../../redux/ItemStore'
 
@@ -14,6 +13,14 @@ const ListItem = (props) =>{
     const [visible, setVisible] = React.useState(false);
     const showDialog = () => setVisible(true);
     const hideDialog = () => setVisible(false);
+    const donePressed= () =>{
+      setVisible(false);
+      dispatch(removeItem({id:item.id,isComplete:true}));
+    }
+    const removePressed= () =>{
+      setVisible(false);
+      dispatch(removeItem({id:item.id,isComplete:false}));
+    }
 
 
     
@@ -27,7 +34,7 @@ const ListItem = (props) =>{
             <View style={styles.cirlceButton}>
                 <Pressable onPress={
                     ()=>{
-                        dispatch(removeItem(item.id));
+                        dispatch(removeItem({id:item.id,isComplete:false}));
                     }
 
                 }>
@@ -51,7 +58,8 @@ const ListItem = (props) =>{
             <Paragraph>{item.description}</Paragraph>
           </Dialog.Content>
           <Dialog.Actions>
-            <RoundedButton onPress={hideDialog} text="Done"></RoundedButton>
+          <Button onPress={donePressed}  >Done</Button>
+            <Button onPress={removePressed}  >Remove</Button>
           </Dialog.Actions>
         </Dialog>
 

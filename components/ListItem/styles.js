@@ -6,7 +6,8 @@ const styles = StyleSheet.create({
         width: '90%',
         margin:10,
         borderRadius:20,
-        height: Dimensions.get('window').height/8,
+        
+        height: Dimensions.get('window').height/7,
         backgroundColor:'white',
         shadowColor: '#000',
         shadowOffset: { width: 0, height: 2 },
@@ -15,6 +16,7 @@ const styles = StyleSheet.create({
         elevation: 3,
 
     },
+
     title: {
         fontSize:20,
         fontWeight:"500",
@@ -24,6 +26,7 @@ const styles = StyleSheet.create({
     description:{
         fontSize:15,
         marginLeft:20,
+        width:"92%",
         color:'grey'
         
     },
