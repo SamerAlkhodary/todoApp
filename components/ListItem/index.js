@@ -58,7 +58,7 @@ const ListItem = (props) =>{
             <Paragraph>{item.description}</Paragraph>
           </Dialog.Content>
           <Dialog.Actions>
-          <Button onPress={donePressed}  >Done</Button>
+          <Button onPress={donePressed}  >Completed</Button>
             <Button onPress={removePressed}  >Remove</Button>
           </Dialog.Actions>
         </Dialog>

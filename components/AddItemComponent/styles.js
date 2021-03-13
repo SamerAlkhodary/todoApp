@@ -22,6 +22,7 @@ const styles = StyleSheet.create({
     iconBack:{
         color:'white',
         fontSize:32,
+        
     },
     titleBox:{
          height: 40,
@@ -34,6 +35,8 @@ const styles = StyleSheet.create({
     title:{
         fontSize:20,
         color:'white',
+        marginLeft:20,
+        fontWeight:"bold"
     },
     descriptionBox:{
         height: 90,

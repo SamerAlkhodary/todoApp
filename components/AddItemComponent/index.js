@@ -21,9 +21,9 @@ const AddItemComponent = (props) =>{
   const {count} = useSelector(state => state.items);
   const {state}= props.navigation;
   const parentState= state.params.title;
-  let initValue = parentState=="Private List"?"private":"work";
+  let initValue = parentState=="Home Tasks"?"private":"work";
   const [value, setValue] = React.useState(initValue);
-  
+  let headerTitle= parentState!="To Do Tasks"?"Add New "+ parentState.split(" ")[0]+" Task" :"Add New Task"
 
 
 
@@ -32,7 +32,7 @@ const AddItemComponent = (props) =>{
     <View>
         <Appbar style={styles.bar} >
            
-            <Text style ={styles.title}>Add New Item</Text>
+            <Text style ={styles.title}>{headerTitle}</Text>
             <View>
         <Pressable onPress={()=>{props.navigation.navigate('ListPage')}}>
             <AntDesign name='back' style={styles.iconBack }/>
@@ -45,19 +45,21 @@ const AddItemComponent = (props) =>{
         <TextInput style={styles.titleBox} 
         placeholder="Title"
         maxLength={30}
+        autoCorrect={false}
         onChangeText={text => onChangeTitle(text)}
       />
        <TextInput style={styles.descriptionBox} 
         placeholder="Description ..."
         maxLength={120}
+        autoCorrect={false}
         multiline={true}
         onChangeText={text => onChangeDesc(text)}
       />
-      {parentState =="To Do List"&&
+      {parentState =="To Do Tasks"&&
     <View>
     <RadioButton.Group onValueChange={value => setValue(value)}value={value}>
       <RadioButton.Item label="Work" value="work"/>
-      <RadioButton.Item label="Private"value="private"/>
+      <RadioButton.Item label="Home"value="private"/>
 
     </RadioButton.Group>
 
@@ -65,7 +67,7 @@ const AddItemComponent = (props) =>{
 }
     <View style={styles.button}>
       <RoundedButton text="Save" onPress={()=>{
-        dispatch(addItem({title:title,description:description,id: count,catagory:value,isDone:(false)}));
+        dispatch(addItem({title:title,description:description,id: count,catagory:value,isDone:(parentState=="Completed Tasks")}));
         props.navigation.navigate('ListPage');
       }}>
 

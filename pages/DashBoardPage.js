@@ -17,7 +17,7 @@ export default function DashBoardPage(props) {
           
         
     };
-    const data=[{name:"To Do List",background: '#A7226E'},{name:"Completed List",background: '#EC2049'},{name:"Work List",background: '#F26B38'},{name:"Private List",background: '#2F9599'}]
+    const data=[{name:"To Do Tasks",background: '#A7226E'},{name:"Completed Tasks",background: '#EC2049'},{name:"Work Tasks",background: '#F26B38'},{name:"Home Tasks",background: '#2F9599'}]
   return (
   
      

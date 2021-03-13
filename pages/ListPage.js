@@ -16,16 +16,16 @@ export default function ListPage(props) {
   const color=  state.params.color;
   let list=[]
   switch(title){
-    case "To Do List":
+    case "To Do Tasks":
       list=toDoItems.filter((item)=>!item.isDone);
       break;
-    case "Completed List":
+    case "Completed Tasks":
       list=toDoItems.filter((item)=>item.isDone);
       break;
-      case "Work List":
+      case "Work Tasks":
       list=toDoItems.filter((item)=>item.catagory==="work" && !item.isDone);
       break;
-      case "Private List":
+      case "Home Tasks":
       list=toDoItems.filter((item)=>item.catagory==="private"&& !item.isDone);
       break;
 
