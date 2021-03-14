@@ -24,7 +24,7 @@ const AddItemComponent = (props) =>{
   const parentState= state.params.title;
   let initValue = parentState==Setting.strings.english.homeTasks?"private":"work";
   const [value, setValue] = React.useState(initValue);
-  const [priority, setPrioroty] = React.useState('Low');
+  const [priority, setPrioroty] = React.useState(100);
   let headerTitle= parentState!=Setting.strings.english.toDoTasks?"Add new "+ parentState.split(" ")[0].toLowerCase()+" task" :Setting.strings.english.addNewTask
 
 

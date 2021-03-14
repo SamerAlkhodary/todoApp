@@ -1,56 +1,55 @@
-import {  StyleSheet, Dimensions } from 'react-native';
+import { StyleSheet, Dimensions } from 'react-native';
 const styles = StyleSheet.create({
     container: {
-      flex: 1,
-      backgroundColor: 'white',
+        flex: 1,
+        backgroundColor: 'white',
 
-      padding:0
-      
+        padding: 0
+
     },
     colContainer: {
-       
-        width:"90%",
-        marginTop:40,
-        marginBottom:30,
-        marginLeft:10
-        
-    },
-    iconButton:{
-        marginTop:10,
-        fontSize:30,
-    
-    },
-    appbarTitle:{
-        fontSize:40,
-        color:'white'
+
+        width: "90%",
+        marginTop: 40,
+        marginBottom: 30,
+        marginLeft: 10
 
     },
-    appbar:{
-        padding:10,
-        width:"100%",
-        height: Dimensions.get('window').height/10,
-        justifyContent:'space-between',
-        backgroundColor:'red',
-        flexDirection:'row',
-        
 
-    },
     rowContainer: {
-        marginTop:30,
-        width:"90%",
-        justifyContent:'center',
-        flexDirection:'row',
-        flex:1,
+        marginTop: 30,
+        width: "90%",
+        justifyContent: 'center',
+        flexDirection: 'row',
+        flex: 1,
     },
     label: {
-        fontSize:18,
-        fontWeight:"500",
-        marginBottom:10,
-      },    
+        fontSize: 18,
+        fontWeight: "500",
+        marginBottom: 10,
+    },
     data: {
-        fontSize:16,
-      }, 
-    
-  });
+        fontSize: 16,
+    },
+    iconButton: {
+        marginTop: 10,
+        fontSize: 30,
 
-  export default styles;
+    },
+    appbarTitle: {
+        fontSize: 40,
+        color: 'white'
+
+    },
+    appbar: {
+        padding: 10,
+        width: "100%",
+        height: Dimensions.get('window').height / 10,
+        justifyContent: 'space-between',
+        backgroundColor: 'red',
+        flexDirection: 'row',
+    },
+
+});
+
+export default styles;
