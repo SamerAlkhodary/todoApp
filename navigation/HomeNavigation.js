@@ -3,7 +3,10 @@ import {createAppContainer} from 'react-navigation';
 import ListPage from '../pages/ListPage';
 import AddPage from '../pages/AddPage';
 import DashBoard from '../pages/DashBoadPage';
+import ExtendedItemPage from '../pages/ExtendedItemPage';
 const pages = {
+
+    
     DashBoardPage:{
         screen: DashBoard,
         navigationOptions:{
@@ -23,6 +26,12 @@ const pages = {
         navigationOptions:{
             title:""
             
+        }
+    },
+    ExtendedItemPage:{
+        screen: ExtendedItemPage,
+        navigationOptions:{
+            title:""   
         }
     },
     

@@ -18,7 +18,7 @@ class List extends React.Component{
       <View style={styles.list}>
         <FlatList
           data={data}
-          renderItem={({item})=> <ListItem item={item}/>}
+          renderItem={({item})=> <ListItem item={item} navigation ={nav}/>}
           keyExtractor={(item,i)=> i.toString()}
           ListHeaderComponent={()=><ListHeader navigation={nav} header={header} color={color}></ListHeader>}
           stickyHeaderIndices={[0]}

@@ -3,21 +3,24 @@ class Setting {
         english:{
             toDoTasks : "To do task",
             workTasks : "Work tasks",
-            homeTasks : "Home tasks",
+            homeTasks : "Private tasks",
             completedTasks : " Completed tasks",
-            filterBy : "filter by",
-            priority : "priority",
-            title : "title",
+            filterBy : "Filter by",
+            priority : "Priority",
+            title : "Title",
             description : "Description",
             addNewTask : "Add new task",
             chooseCategory : "Choose category",
             work : "Work",
-            home : "Home",
+            home : "Private",
             choosePriority : "Choose priority",
             low : "Low",
             medium : "Medium",
             high : "High",
-            save : "Save"
+            save : "Save",
+            category: "Category",
+            completed: "Completed",
+            remove: "Remove",
     
         }
     }
