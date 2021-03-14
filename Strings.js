@@ -21,6 +21,7 @@ class Setting {
             category: "Category",
             completed: "Completed",
             remove: "Remove",
+            item:"Item",
     
         }
     }

@@ -1,19 +1,39 @@
-import {  StyleSheet } from 'react-native';
+import {  StyleSheet, Dimensions } from 'react-native';
 const styles = StyleSheet.create({
     container: {
       flex: 1,
       backgroundColor: 'white',
-      
 
-      padding:10
+      padding:0
       
     },
     colContainer: {
        
         width:"90%",
         marginTop:40,
-        marginBottom:30
+        marginBottom:30,
+        marginLeft:10
         
+    },
+    iconButton:{
+        marginTop:10,
+        fontSize:30,
+    
+    },
+    appbarTitle:{
+        fontSize:40,
+        color:'white'
+
+    },
+    appbar:{
+        padding:10,
+        width:"100%",
+        height: Dimensions.get('window').height/10,
+        justifyContent:'space-between',
+        backgroundColor:'red',
+        flexDirection:'row',
+        
+
     },
     rowContainer: {
         marginTop:30,
@@ -21,8 +41,6 @@ const styles = StyleSheet.create({
         justifyContent:'center',
         flexDirection:'row',
         flex:1,
-
-
     },
     label: {
         fontSize:18,
@@ -31,7 +49,6 @@ const styles = StyleSheet.create({
       },    
     data: {
         fontSize:16,
-        
       }, 
     
   });

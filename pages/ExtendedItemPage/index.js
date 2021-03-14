@@ -1,11 +1,12 @@
 
 import React from 'react';
-import { View,Text,Button } from 'react-native';
+import { View,Text,Button,Pressable } from 'react-native';
 
 import {useDispatch} from 'react-redux';
 import Settings from '../../Strings';
 import styles from './styles.js';
 import {removeItem} from '../../redux/ItemStore'
+import { MaterialIcons } from '@expo/vector-icons';
 export default function ExtendedItemPage(props) {
 
 
@@ -14,6 +15,7 @@ export default function ExtendedItemPage(props) {
   const{state}= navigation; 
   const dispatch= useDispatch();
   const item=  state.params.item;
+  const [editState, setEditState] = React.useState(false);
 
   let itemPriority = 'Low'
   switch(item.priority){
@@ -21,7 +23,6 @@ export default function ExtendedItemPage(props) {
       case 500: itemPriority = 'Meduim' ;break;
       case 1000: itemPriority = 'High' ;break;
   }
-  console.log(item);
 
     const donePressed= () =>{
         
@@ -33,20 +34,32 @@ export default function ExtendedItemPage(props) {
         dispatch(removeItem({id:item.id,isComplete:false}));
         navigation.navigate('ListPage');
       }
-
-  
+      const editPressed= ()=> {
+          setEditState(!editState);
+      }
+      
   return (
-    
+        
 
        <View style={styles.container}>
+          <View style={styles.appbar}>
+          <Text style={styles.appbarTitle}>{Settings.strings.english.item}</Text>
+          <Pressable onPress={editPressed}>
+        <MaterialIcons name='edit'color='white'style={styles.iconButton}>
+
+        </MaterialIcons>
+        </Pressable>
+        
+          </View>
+        
            
         <View style={styles.colContainer}>
         <Text style={styles.label}>
            {Settings.strings.english.title}
         </Text>
-        <Text style={styles.data}>
-            {item.title}
-        </Text>
+            <Text style={styles.data}>
+                 {item.title}
+            </Text>
         </View>
 
         <View style={styles.colContainer}>
