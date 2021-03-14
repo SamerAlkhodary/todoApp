@@ -9,6 +9,7 @@ import {removeItem} from '../../redux/ItemStore'
 const ListItem = (props) =>{
     const dispatch= useDispatch();
     const item = props.item;
+    const maxlimit = 30;
 
     const [visible, setVisible] = React.useState(false);
     const showDialog = () => setVisible(true);
@@ -28,25 +29,23 @@ const ListItem = (props) =>{
         <View style={styles.ItemContainer}>
             <Pressable onPress={showDialog}> 
             <View style= {styles.header}>
-            <Text style={styles.title}>
-                {item.title}
-            </Text>
+            <Text style={styles.title}>{item.title}</Text>
             <View style={styles.cirlceButton}>
                 <Pressable onPress={
                     ()=>{
                         dispatch(removeItem({id:item.id,isComplete:false}));
                     }
-
                 }>
                 <AntDesign name ='closecircleo' style={styles.icons}/>
                 </Pressable>
             </View>
             
-            
             </View>
-           
             <Text style={styles.description}>
-                {item.description}
+            { ((item.description).length > maxlimit) ? 
+            (((item.description).substring(0,maxlimit-3)) + '...') : 
+            item.description }
+          
             </Text>
             </Pressable>
 

@@ -1,11 +1,11 @@
 import {createStackNavigator} from 'react-navigation-stack';
 import {createAppContainer} from 'react-navigation';
-import ListPage from '../pages/ListPage.js';
-import AddPage from '../pages/AddPage.js'
-import DashBoardPage from '../pages/DashBoardPage.js'
+import ListPage from '../pages/ListPage';
+import AddPage from '../pages/AddPage';
+import DashBoard from '../pages/DashBoadPage';
 const pages = {
     DashBoardPage:{
-        screen: DashBoardPage,
+        screen: DashBoard,
         navigationOptions:{
             title:""
             

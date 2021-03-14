@@ -3,10 +3,10 @@ import {StyleSheet,Dimensions} from 'react-native';
 
 const styles = StyleSheet.create({
     ItemContainer: {
-        width: '90%',
+        width: '95%',
         margin:10,
         borderRadius:20,
-        padding:10,
+        padding:3,
         height: Dimensions.get('window').height/7,
         backgroundColor:'white',
         shadowColor: '#000',
@@ -18,7 +18,10 @@ const styles = StyleSheet.create({
     },
 
     title: {
-        fontSize:20,
+        fontSize:17,
+        marginStart:5,
+        marginTop:3,
+
         fontWeight:"500",
         marginLeft:20,
 
@@ -27,7 +30,9 @@ const styles = StyleSheet.create({
         fontSize:15,
         marginLeft:20,
         width:"92%",
-        color:'grey'
+        color:'grey',
+        marginStart:5,
+        marginTop:3,
         
     },
     header:{

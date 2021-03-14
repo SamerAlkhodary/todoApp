@@ -46,7 +46,7 @@ const AddItemComponent = (props) =>{
         <View style={styles.container}>
         <TextInput style={styles.titleBox} 
         placeholder={Setting.strings.english.title}
-        maxLength={30}
+        maxLength={25}
         autoCorrect={false}
         onChangeText={text => onChangeTitle(text)}
       />
