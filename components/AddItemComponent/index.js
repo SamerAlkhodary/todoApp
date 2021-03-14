@@ -70,9 +70,9 @@ const AddItemComponent = (props) =>{
 <View style={styles.priorityContainer}>
       <Text style={styles.catagoryText}>{Setting.strings.english.choosePriority}</Text>
     <RadioButton.Group onValueChange={priority => setPrioroty(priority)}value={priority} >
-      <RadioButton.Item label={Setting.strings.english.low} value="Low"/>
-      <RadioButton.Item label={Setting.strings.english.medium}value="Medium"/>
-      <RadioButton.Item label={Setting.strings.english.high} value="High"/>
+      <RadioButton.Item label={Setting.strings.english.low} value={100}/>
+      <RadioButton.Item label={Setting.strings.english.medium}value={500}/>
+      <RadioButton.Item label={Setting.strings.english.high} value={1000}/>
 
     </RadioButton.Group>
     </View >

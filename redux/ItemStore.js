@@ -20,18 +20,24 @@ export const itemSlice= createSlice({
                 }
             }
           
-
            if (action.payload.isComplete){
                state.toDoItems[index].isDone=true;
            }else{
                state.toDoItems.splice(index,1);
            }
-           console.log(state.toDoItems);
-
-           
-       
+           console.log(state.toDoItems);           
+    },
+    sortWithPriority:(state) =>{
+        state.toDoItems.sort(function(a,b){
+            return a.priority<b.priority?1:-1
+          });
+    },
+    sortWithTitle:(state) =>{
+        state.toDoItems.sort(function(a,b){
+            return b.title<a.title?1:-1
+          });
     }
     }
 });
-export const{addItem,removeItem}=itemSlice.actions;
+export const{addItem,removeItem,sortWithPriority,sortWithTitle}=itemSlice.actions;
 export default itemSlice.reducer;
