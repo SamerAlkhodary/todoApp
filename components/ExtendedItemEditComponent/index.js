@@ -1,5 +1,14 @@
 import React from 'react';
-import { View, Text, SafeAreaView, ScrollView ,Button} from 'react-native';
+import {
+    View,
+    Text,
+    SafeAreaView,
+    ScrollView,
+    Button,
+    ToastAndroid,
+    Platform,
+    Alert,
+} from 'react-native';
 import { TextInput } from 'react-native-paper';
 import { RadioButton } from 'react-native-paper';
 import { useDispatch } from 'react-redux';
@@ -9,33 +18,37 @@ import Settings from '../../Strings';
 import styles from './styles.js';
 
 export default function ExtendedItemEditComponent(props) {
-  
 
 
     const dispatch = useDispatch();
     const item = props.item;
+    const navigation = props.navigation;
 
     const [title, onChangeTitle] = React.useState(item.title);
     const [description, onChangeDesc] = React.useState(item.description);
     const [value, setValue] = React.useState(item.catagory);
     const [priority, setPrioroty] = React.useState(item.priority);
-    const savePressed=()=>{
+    const savePressed = () => {
         let newItem = {
-            title:title,
-            description:description,
-            id:item.id,
+            title: title,
+            description: description,
+            id: item.id,
             isDone: item.isDone,
-            catagory:value,
-            priority:priority,
+            catagory: value,
+            priority: priority,
+
         }
-        dispatch(updateItem({item:newItem}));
+
+        dispatch(updateItem({ item: newItem }));
+        navigation.navigate('ListPage');
+
     }
 
     return (
         <SafeAreaView>
             <ScrollView style={styles.scrollView}>
                 <View style={styles.container}>
-             
+
                     <View style={styles.colContainer}>
                         <Text style={styles.label}>
                             {Settings.strings.english.title}
@@ -94,7 +107,7 @@ export default function ExtendedItemEditComponent(props) {
                         </View >
                         <Button title={Settings.strings.english.save} onPress={savePressed}></Button>
                     </View>
-                    
+
 
                 </View>
             </ScrollView>

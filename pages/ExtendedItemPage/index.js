@@ -13,7 +13,7 @@ export default function ExtendedItemPage(props) {
 
     const editPressed = () => {
         setEditState(!editState);
-        
+
     }
     let icon = editState ? 'arrow-forward' : 'edit';
     console.log(editState);
@@ -34,7 +34,7 @@ export default function ExtendedItemPage(props) {
                     </MaterialIcons>
                 </Pressable>
             </View>
-            { editState && <ExtendedItemEditComponent item={item}></ExtendedItemEditComponent>}
+            { editState && <ExtendedItemEditComponent item={item} navigation={props.navigation}></ExtendedItemEditComponent>}
             { !editState && <ExtendedItemViewComponent item={item}></ExtendedItemViewComponent>}
 
         </View>

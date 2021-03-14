@@ -47,9 +47,9 @@ export const itemSlice = createSlice({
                     break;
                 }
             }
-            
-            
-            state.toDoItems[index]=action.payload.item;
+
+
+            state.toDoItems[index] = action.payload.item;
 
         }
     }

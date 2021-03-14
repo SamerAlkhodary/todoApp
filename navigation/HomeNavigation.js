@@ -1,41 +1,41 @@
-import {createStackNavigator} from 'react-navigation-stack';
-import {createAppContainer} from 'react-navigation';
+import { createStackNavigator } from 'react-navigation-stack';
+import { createAppContainer } from 'react-navigation';
 import ListPage from '../pages/ListPage';
 import AddPage from '../pages/AddPage';
 import DashBoard from '../pages/DashBoadPage';
 import ExtendedItemPage from '../pages/ExtendedItemPage';
 const pages = {
 
-    
-    DashBoardPage:{
+
+    DashBoardPage: {
         screen: DashBoard,
-        navigationOptions:{
-            title:""
-            
+        navigationOptions: {
+            title: ""
+
         }
     },
-    ListPage:{
+    ListPage: {
         screen: ListPage,
-        navigationOptions:{
-            title:""
-            
+        navigationOptions: {
+            title: ""
+
         }
     },
-    AddItemPage:{
+    AddItemPage: {
         screen: AddPage,
-        navigationOptions:{
-            title:""
-            
+
+        navigationOptions: {
+            title: "",
         }
     },
-    ExtendedItemPage:{
+    ExtendedItemPage: {
         screen: ExtendedItemPage,
-        navigationOptions:{
-            title:""   
+        navigationOptions: {
+            title: ""
         }
     },
-    
-  
+
+
 }
-const HomeStack= createStackNavigator(pages);
+const HomeStack = createStackNavigator(pages);
 export default createAppContainer(HomeStack);

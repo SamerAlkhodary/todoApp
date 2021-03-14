@@ -3,7 +3,6 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: 'white',
-
         padding: 0
 
     },
@@ -37,7 +36,9 @@ const styles = StyleSheet.create({
 
     },
     appbarTitle: {
-        fontSize: 40,
+        alignSelf: 'center',
+        fontSize: 20,
+        fontWeight: "bold",
         color: 'white'
 
     },
@@ -46,7 +47,7 @@ const styles = StyleSheet.create({
         width: "100%",
         height: Dimensions.get('window').height / 10,
         justifyContent: 'space-between',
-        backgroundColor: 'red',
+        backgroundColor: '#228ae6',
         flexDirection: 'row',
     },
 

@@ -12,33 +12,33 @@ export default function ListPage(props) {
 
 
   navigation = props.navigation;
-  const{toDoItems}=useSelector(state => state.items);
-  const{state}= navigation; 
-  const title=  state.params.title.name;
-  const color=  state.params.color;
-  let list=[]
-  switch(title){
+  const { toDoItems } = useSelector(state => state.items);
+  const { state } = navigation;
+  const title = state.params.title.name;
+  const color = state.params.color;
+  let list = []
+  switch (title) {
     case Setting.strings.english.toDoTasks:
-      list=toDoItems.filter((item)=>!item.isDone);
+      list = toDoItems.filter((item) => !item.isDone);
       break;
     case Setting.strings.english.completedTasks:
-      list=toDoItems.filter((item)=>item.isDone);
+      list = toDoItems.filter((item) => item.isDone);
       break;
-      case Setting.strings.english.workTasks:
-      list=toDoItems.filter((item)=>item.catagory==="work" && !item.isDone);
+    case Setting.strings.english.workTasks:
+      list = toDoItems.filter((item) => item.catagory === "work" && !item.isDone);
       break;
-      case Setting.strings.english.homeTasks:
-      list=toDoItems.filter((item)=>item.catagory==="private"&& !item.isDone);
+    case Setting.strings.english.homeTasks:
+      list = toDoItems.filter((item) => item.catagory === "private" && !item.isDone);
       break;
 
   }
   return (
-    
+
     <PaperProvider>
-       <View style={styles.container}>
-      <List items={list} navigation={navigation} header={title}color ={color}></List>
-    
-    </View>
+      <View style={styles.container}>
+        <List items={list} navigation={navigation} header={title} color={color}></List>
+
+      </View>
     </PaperProvider>
   );
 }
