@@ -57,7 +57,7 @@ const AddItemComponent = (props) =>{
         multiline={true}
         onChangeText={text => onChangeDesc(text)}
       />
-      {parentState == Setting.strings.english.toDoTasks&&
+      {parentState == Setting.strings.english.toDoTasks || parentState == Setting.strings.english.completedTasks&&
     <View style={styles.catagoryContainer}>
       <Text style={styles.catagoryText}>{Setting.strings.english.chooseCategory}</Text>
     <RadioButton.Group onValueChange={value => setValue(value)}value={value}>
