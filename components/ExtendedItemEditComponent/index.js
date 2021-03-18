@@ -45,7 +45,7 @@ export default function ExtendedItemEditComponent(props) {
     }
 
     return (
-        <SafeAreaView>
+        
             <ScrollView style={styles.scrollView}>
                 <View style={styles.container}>
 
@@ -111,7 +111,7 @@ export default function ExtendedItemEditComponent(props) {
 
                 </View>
             </ScrollView>
-        </SafeAreaView>
+       
 
     );
 }

@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
   rowContainer: {
     marginTop: 30,
     width: "90%",
-    justifyContent: 'center',
+    justifyContent: 'space-around',
     flexDirection: 'row',
 
   },
